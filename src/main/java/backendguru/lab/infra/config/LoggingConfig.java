@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Primary;
 public class LoggingConfig {
 
     @Bean
-    @Primary
     public MachinePort closeMachinePort(MachinePowerService target, MachineAuditLogRepository repository) {
         return new LoggingMachinePortDecorator(target, repository);
     }

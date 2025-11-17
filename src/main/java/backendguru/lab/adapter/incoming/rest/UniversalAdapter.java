@@ -23,17 +23,16 @@ public class UniversalAdapter {
     @PostMapping("/off")
     public Object turnOff(@RequestBody TurnOffRequest request) {
 
-        port.close(); // iş mantığı
+        port.close();
 
-        return resolver.resolve(request.source()); // strategy seç
+        return resolver.resolve(request.source());
     }
 
     @PostMapping("/on")
     public Object turnOn(@RequestBody TurnOffRequest request) {
 
-        port.close(); // iş mantığı
+        port.turnOn();
 
-        return resolver.resolve(request.source()); // strategy seç
+        return resolver.resolve(request.source());
     }
 }
-
