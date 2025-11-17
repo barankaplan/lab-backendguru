@@ -12,5 +12,11 @@ public class MachinePowerService implements CloseMachinePort {
         System.out.println(">>> [APPLICATION] Machine is shutting down...");
         // burada makine kapatma iş kuralları olur
     }
+
+    @Override
+    public void turnOn() {
+        System.out.println(">>> [APPLICATION] Machine is being turned on ...");
+        // burada makine kapatma iş kuralları olur
+    }
 }
 
