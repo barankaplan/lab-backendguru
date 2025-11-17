@@ -23,7 +23,7 @@ public class LoggingMachinePortDecorator implements MachinePort {
         long start = System.currentTimeMillis();
 
         //target.closeMachine(); // update istendi , makine kapatmadan önce suyu kontrol edelim
-        target.closeMachineAndCHeckWaterLevel();
+        target.closeMachineAndCheckWaterLevel();
 
         long duration = System.currentTimeMillis() - start;
 
