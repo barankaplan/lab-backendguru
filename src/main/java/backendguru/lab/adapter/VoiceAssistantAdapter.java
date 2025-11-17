@@ -1,10 +1,5 @@
 package backendguru.lab.adapter;
 
-import backendguru.lab.application.port.CloseMachinePort;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 //@RestController
 //@RequestMapping("/api/voice")
 //public class VoiceAssistantAdapter {

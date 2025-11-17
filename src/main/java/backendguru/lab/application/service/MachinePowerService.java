@@ -1,11 +1,11 @@
 package backendguru.lab.application.service;
 
 
-import backendguru.lab.application.port.CloseMachinePort;
+import backendguru.lab.application.port.MachinePort;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MachinePowerService implements CloseMachinePort {
+public class MachinePowerService implements MachinePort {
 
     @Override
     public void close() {

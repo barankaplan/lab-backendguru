@@ -1,7 +1,7 @@
 package backendguru.lab.application.port;
 
 
-public interface CloseMachinePort {
+public interface MachinePort {
     void close();
     void turnOn();
 }
