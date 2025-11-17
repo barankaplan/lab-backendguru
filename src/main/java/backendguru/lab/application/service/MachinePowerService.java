@@ -11,6 +11,11 @@ public class MachinePowerService {
         // burada makine kapatma iş kuralları olur
     }
 
+    public void closeMachineAndCHeckWaterLevel() {
+        System.out.println(">>> [APPLICATION] Water Level is checked and Machine is shutting down...");
+        // burada makine kapatma iş kuralları olur
+    }
+
     public void turnOnMachine() {
         System.out.println(">>> [APPLICATION] Machine is being turned on...");
         // burada makine açma iş kuralları olur
