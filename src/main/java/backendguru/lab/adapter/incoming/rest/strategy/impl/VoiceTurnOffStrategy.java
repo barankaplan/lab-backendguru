@@ -1,6 +1,6 @@
 package backendguru.lab.adapter.incoming.rest.strategy.impl;
 
-import backendguru.lab.adapter.incoming.rest.dto.VoiceResponse;
+import backendguru.lab.adapter.incoming.rest.dto.response.VoiceResponse;
 import backendguru.lab.adapter.incoming.rest.strategy.TurnOffResponseStrategy;
 import org.springframework.stereotype.Component;
 

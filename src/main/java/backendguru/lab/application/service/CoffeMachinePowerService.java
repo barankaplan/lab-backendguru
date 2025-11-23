@@ -4,7 +4,7 @@ package backendguru.lab.application.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MachinePowerService {
+public class CoffeMachinePowerService {
 
     public void closeMachine() {
         System.out.println(">>> [APPLICATION] Machine is shutting down...");

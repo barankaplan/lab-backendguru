@@ -9,7 +9,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "machine_audit_log")
 @Data
-public class MachineAuditLogEntity {
+public class CoffeMachineAuditLogEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,9 @@ public class MachineAuditLogEntity {
 
     private Instant createdAt;
 
-    protected MachineAuditLogEntity() { }
+    protected CoffeMachineAuditLogEntity() { }
 
-    public MachineAuditLogEntity(String methodName, Long durationMs) {
+    public CoffeMachineAuditLogEntity(String methodName, Long durationMs) {
         this.methodName = methodName;
         this.durationMs = durationMs;
         this.createdAt = Instant.now();

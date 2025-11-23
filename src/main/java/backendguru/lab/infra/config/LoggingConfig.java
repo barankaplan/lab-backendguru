@@ -1,18 +1,17 @@
 package backendguru.lab.infra.config;
 
-import backendguru.lab.application.port.MachinePort;
-import backendguru.lab.application.service.MachinePowerService;
-import backendguru.lab.infra.logging.LoggingMachinePortDecorator;
-import backendguru.lab.infra.logging.MachineAuditLogRepository;
+import backendguru.lab.application.port.CoffeMachinePort;
+import backendguru.lab.application.service.CoffeMachinePowerService;
+import backendguru.lab.infra.logging.LoggingCoffeMachinePortDecorator;
+import backendguru.lab.infra.logging.CoffeeMachineAuditLogRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class LoggingConfig {
 
     @Bean
-    public MachinePort closeMachinePort(MachinePowerService target, MachineAuditLogRepository repository) {
-        return new LoggingMachinePortDecorator(target, repository);
+    public CoffeMachinePort closeMachinePort(CoffeMachinePowerService target, CoffeeMachineAuditLogRepository repository) {
+        return new LoggingCoffeMachinePortDecorator(target, repository);
     }
 }
