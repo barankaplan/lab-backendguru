@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class TurnOffResponseResolver {
+public class TurnOnResponseResolver {
 
-    private final List<TurnOffResponseStrategy> strategies;
+    private final List<TurnOnResponseStrategy> strategies;
 
-    public TurnOffResponseResolver(List<TurnOffResponseStrategy> strategies) {
+    public TurnOnResponseResolver(List<TurnOnResponseStrategy> strategies) {
         this.strategies = strategies;
     }
 
@@ -18,9 +18,9 @@ public class TurnOffResponseResolver {
         return strategies.stream()
                 .filter(s -> s.supports(source))
                 .findFirst()
-                .map(TurnOffResponseStrategy::buildResponse)
+                .map(TurnOnResponseStrategy::buildResponse)
                 .orElse(ResponseEntity
                         .badRequest()
-                        .body("Unsupported source for OFF action: " + source));
+                        .body("Unsupported source for ON action: " + source));
     }
 }

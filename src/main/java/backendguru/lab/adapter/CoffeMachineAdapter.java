@@ -1,19 +1,16 @@
 package backendguru.lab.adapter;
 
-
 import backendguru.lab.application.port.CoffeMachinePort;
-import backendguru.lab.infra.CoffeMachineAuditLogEntity;
-
-
-import backendguru.lab.application.service.CoffeMachinePowerService;
+import backendguru.lab.infra.CoffeeMachineAuditLogEntity;
+import backendguru.lab.application.service.CoffeeMachinePowerService;
 import backendguru.lab.infra.logging.CoffeeMachineAuditLogRepository;
 
 public class CoffeMachineAdapter implements CoffeMachinePort {
 
-    private final CoffeMachinePowerService target;
+    private final CoffeeMachinePowerService target;
     private final CoffeeMachineAuditLogRepository repository;
 
-    public CoffeMachineAdapter(CoffeMachinePowerService target, CoffeeMachineAuditLogRepository repository) {
+    public CoffeMachineAdapter(CoffeeMachinePowerService target, CoffeeMachineAuditLogRepository repository) {
         this.target = target;
         this.repository = repository;
     }
@@ -23,21 +20,21 @@ public class CoffeMachineAdapter implements CoffeMachinePort {
         long start = System.currentTimeMillis();
 
         //target.closeMachine(); // update istendi , makine kapatmadan önce suyu kontrol edelim
-        target.closeMachineAndCheckWaterLevel();
+        target.turnOff();
 
         long duration = System.currentTimeMillis() - start;
 
-        repository.save(new CoffeMachineAuditLogEntity("MachinePort.close", duration));
+        repository.save(new CoffeeMachineAuditLogEntity("MachinePort.close", duration));
     }
 
     @Override
     public void turnOn() {
         long start = System.currentTimeMillis();
 
-        target.turnOnMachine(); // business logic
+        target.turnOn(); // business logic
 
         long duration = System.currentTimeMillis() - start;
 
-        repository.save(new CoffeMachineAuditLogEntity("MachinePort.turnOn", duration));
+        repository.save(new CoffeeMachineAuditLogEntity("MachinePort.turnOn", duration));
     }
 }
