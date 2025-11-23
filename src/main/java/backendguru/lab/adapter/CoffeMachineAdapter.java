@@ -1,4 +1,4 @@
-package backendguru.lab.infra.logging;
+package backendguru.lab.adapter;
 
 
 import backendguru.lab.application.port.CoffeMachinePort;
@@ -6,14 +6,14 @@ import backendguru.lab.infra.CoffeMachineAuditLogEntity;
 
 
 import backendguru.lab.application.service.CoffeMachinePowerService;
+import backendguru.lab.infra.logging.CoffeeMachineAuditLogRepository;
 
-public class LoggingCoffeMachinePortDecorator implements CoffeMachinePort {
+public class CoffeMachineAdapter implements CoffeMachinePort {
 
     private final CoffeMachinePowerService target;
     private final CoffeeMachineAuditLogRepository repository;
 
-    public LoggingCoffeMachinePortDecorator(CoffeMachinePowerService target,
-                                            CoffeeMachineAuditLogRepository repository) {
+    public CoffeMachineAdapter(CoffeMachinePowerService target, CoffeeMachineAuditLogRepository repository) {
         this.target = target;
         this.repository = repository;
     }
