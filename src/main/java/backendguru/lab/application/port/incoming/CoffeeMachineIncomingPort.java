@@ -1,9 +1,8 @@
 package backendguru.lab.application.port.incoming;
 
-public interface CoffeeMachinePowerUseCase {
+public interface CoffeeMachineIncomingPort {
 
     void turnOff();
-
     void turnOn();
 }
 

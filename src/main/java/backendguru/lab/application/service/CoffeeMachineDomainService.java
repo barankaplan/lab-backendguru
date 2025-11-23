@@ -1,6 +1,6 @@
 package backendguru.lab.application.service;
 
-import backendguru.lab.application.port.incoming.CoffeeMachinePowerUseCase;
+import backendguru.lab.application.port.incoming.CoffeeMachineIncomingPort;
 import backendguru.lab.application.port.outgoing.AuditLogPort;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
  * - Outgoing port'u (AuditLogPort) kullanarak dış dünyaya erişir.
  */
 @Service
-public class CoffeeMachinePowerService implements CoffeeMachinePowerUseCase {
+public class CoffeeMachineDomainService implements CoffeeMachineIncomingPort {
 
-    private final AuditLogPort auditLogPort;
+    private final AuditLogPort auditLogPort; //domain loglama yapmak istioyr ama jpa mi kafka mi ilgilenmiyor
 
-    public CoffeeMachinePowerService(AuditLogPort auditLogPort) {
+    public CoffeeMachineDomainService(AuditLogPort auditLogPort) {
         this.auditLogPort = auditLogPort;
     }
 
