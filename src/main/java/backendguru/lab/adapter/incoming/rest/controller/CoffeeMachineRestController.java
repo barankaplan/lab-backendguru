@@ -1,6 +1,6 @@
 package backendguru.lab.adapter.incoming.rest.controller;
 
-import backendguru.lab.adapter.incoming.rest.dto.request.PowerRequest;
+import backendguru.lab.adapter.incoming.rest.dto.request.ActionRequest;
 import backendguru.lab.adapter.incoming.rest.strategy.TurnOffResponseResolver;
 import backendguru.lab.adapter.incoming.rest.strategy.TurnOnResponseResolver;
 import backendguru.lab.application.port.incoming.CoffeeMachinePowerUseCase;
@@ -23,13 +23,13 @@ public class CoffeeMachineRestController {
     }
 
     @PostMapping("/off")
-    public Object turnOff(@RequestBody PowerRequest request) {
+    public Object turnOff(@RequestBody ActionRequest request) {
         useCase.turnOff(); // PRIMARY PORT çağrısı (application core)
         return turnOffResponseResolver.resolve(request.source()); // REST cevabı
     }
 
     @PostMapping("/on")
-    public Object turnOn(@RequestBody PowerRequest request) {
+    public Object turnOn(@RequestBody ActionRequest request) {
         useCase.turnOn(); // PRIMARY PORT çağrısı
         return turnOnResponseResolver.resolve(request.source());
     }
